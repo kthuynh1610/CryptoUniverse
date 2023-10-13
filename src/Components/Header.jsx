@@ -1,30 +1,35 @@
 import React, {useState} from 'react'
+import {Link} from 'react-router-dom';
 const Header = () => {
   const [open, setOpen] = useState(true)
   const Menus = [
-    {title: "Home", src:"Home" },
-    {title: "Crypto", src:"Crypto" },
-    {title: "News", src:"News" },
-    {title: "Home", src:"Home" },
+    {title: "Home", src:"home" },
+    {title: "Crypto", src:"currencies" },
+    {title: "News", src:"news" },
+    {title: "Exchanges", src:"Exchanges" },
   ]
   return (
     <>
-      <div className={`${open ? 'w-72' : 'w-20'} h-screen relative bg-indigo-600 border rounded-l-lg`}>
-          <div className='flex mt-1.5'>
-            <div className='flex items-center justify-center p-1 ml-1'>
-              <i className="fa-solid fa-coins fa-lg text-white"></i>
-              <span className={`overflow-hidden transition-all text-white ${
-                  open ? "w-52 ml-3" : "w-0"
-                }`}>Crypto Universe</span>
+
+      <div className={`${open ? 'w-72' : 'w-20'} h-screen p-5 duration-300 relative bg-indigo-600 border rounded-l-lg`}>
+            <div className="flex gap-x-4 items-center p-px">
+              <i 
+              className={`cursor-pointer duration-500 fa-solid fa-coins fa-lg text-white ${
+                open && "rotate-[360deg]"
+              }`}></i>
+              <h1 className={`text-white origin-left font-medium text-xl duration-200 ${
+                !open && "scale-0"
+              }`}>Crypto Universe</h1>
             </div>
-            <i className='fa-solid 
-            fa-arrow-left absolute 
-            cursor-pointer purple 
-            -right-3 top-5 
-            w-10 ' 
-            onClick={()=>setOpen(!open)}></i>
-          </div>
-          <div>
+            <img 
+             src='./src/assets/arrow.png'
+             className={`fa-solid 
+                fa-arrow-left absolute 
+                cursor-pointer purple 
+                -right-3 top-9 w-7 text-white
+                ${!open && 'rotate-180'}`}
+             onClick={()=>setOpen(!open)}/>
+          {/* <div>
             <ul>
               <li
               className={`
@@ -56,8 +61,30 @@ const Header = () => {
               )}
             </li>
             </ul>
-          </div>
+          </div> */}
+          <ul className='pt-10'>
+          {Menus.map((Menu,index)=>(
+            <Link to={`/${Menu.title}`}>
+              <li
+              key={index}
+              className={`flex  rounded-md p-2 cursor-pointer hover:bg-white text-gray-300 text-sm items-center gap-x-4 
+              ${Menu.gap ? "mt-9" : "mt-2"} ${
+                index === 0 && "bg-light-white"
+              } `}
+            >
+            
+                <img className='w-5 text-white' src={`./src/assets/${Menu.src}.svg`} />
+                <span className={`${!open && "hidden"} origin-left duration-200`}>
+                  {Menu.title}
+                </span>
+              
+              
+            </li>
+          </Link>
+          ))}
+          </ul>
       </div>
+      
     </>
   )
 }
