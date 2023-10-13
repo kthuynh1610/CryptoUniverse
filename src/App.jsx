@@ -1,14 +1,16 @@
 import { useState } from 'react'
 import './App.css'
-import Header from './Components/VerticalHeader/Header'
+import Home from './components/Home';
+import Header from './components/Header';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
+    <div className='flex'>
       <Header/>
-      <h1>Crypto Universe</h1>
+      <Home/>
+    </div>
     </>
   )
 }
