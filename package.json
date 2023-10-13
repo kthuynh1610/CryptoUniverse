@@ -12,7 +12,9 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
     "axios": "^1.5.1",
+    "boxicons": "^2.1.4",
     "chart.js": "^4.4.0",
+    "lucide-react": "^0.285.0",
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
