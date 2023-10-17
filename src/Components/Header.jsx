@@ -11,13 +11,13 @@ const Header = () => {
   return (
     <>
 
-      <div className={`${open ? 'w-72' : 'w-20'} h-screen p-5 duration-300 relative bg-indigo-600 border rounded-l-lg`}>
+      <div className={`${open ? 'w-72' : 'w-20'} h-screen p-5 duration-300 border-r relative bg-white border-gray-300/40 rounded-l-lg`}>
             <div className="flex gap-x-4 items-center p-px">
               <i 
-              className={`cursor-pointer duration-500 fa-solid fa-coins fa-lg text-white ${
+              className={`cursor-pointer text-gray-700 duration-500 fa-solid fa-coins fa-lg ${
                 open && "rotate-[360deg]"
               }`}></i>
-              <h1 className={`text-white origin-left font-medium text-xl duration-200 ${
+              <h1 className={` origin-left text-gray-700 font-medium text-xl duration-200 ${
                 !open && "scale-0"
               }`}>Crypto Universe</h1>
             </div>
@@ -62,12 +62,12 @@ const Header = () => {
             </li>
             </ul>
           </div> */}
-          <ul className='pt-10'>
+          <ul className='pt-6'>
           {Menus.map((Menu,index)=>(
             <Link to={`/${Menu.title}`}>
               <li
               key={index}
-              className={`flex  rounded-md p-2 cursor-pointer hover:bg-white text-gray-300 text-sm items-center gap-x-4 
+              className={`flex  rounded-md p-2 cursor-pointer hover:bg-slate-400 text-gray-700 text-sm items-center gap-x-4 
               ${Menu.gap ? "mt-9" : "mt-2"} ${
                 index === 0 && "bg-light-white"
               } `}
