@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Home from './components/Home';
-import Header from './components/Header';
+import Header from './Components/Header';
 import { Route, Routes } from 'react-router-dom';
 import News from './components/News';
 import Crypto from './components/Crypto';

@@ -11,15 +11,17 @@ const Header = () => {
   return (
     <>
 
-      <div className={`${open ? 'w-72' : 'w-20'} h-screen p-5 duration-300 border-r relative bg-white border-gray-300/40 rounded-l-lg`}>
+      <aside className={`${open ? 'w-72' : 'w-20'} h-screen p-5 duration-300 border-r sticky bg-white border-gray-300/40 rounded-l-lg`}>
             <div className="flex gap-x-4 items-center p-px">
-              <i 
-              className={`cursor-pointer text-gray-700 duration-500 fa-solid fa-coins fa-lg ${
-                open && "rotate-[360deg]"
-              }`}></i>
-              <h1 className={` origin-left text-gray-700 font-medium text-xl duration-200 ${
-                !open && "scale-0"
-              }`}>Crypto Universe</h1>
+              <Link to='/'>
+                <i 
+                className={`cursor-pointer text-gray-700 duration-500 fa-solid fa-coins fa-lg ${
+                  open && "rotate-[360deg]"
+                }`}></i>
+                <h1 className={` origin-left text-gray-700 font-medium text-xl duration-200 ${
+                  !open && "scale-0"
+                }`}>Crypto Universe</h1>
+              </Link>
             </div>
             <img 
              src='./src/assets/arrow.png'
@@ -83,7 +85,7 @@ const Header = () => {
           </Link>
           ))}
           </ul>
-      </div>
+      </aside>
       
     </>
   )
